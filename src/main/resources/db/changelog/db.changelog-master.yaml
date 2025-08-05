@@ -1,5 +1,48 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: 001
       author: lucas
-      changes: []
+      changes:
+        - sqlFile:
+            path: 001-create-user-table.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: 002
+      author: lucas
+      changes:
+        - sqlFile:
+            path: 002-create-categories-table.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: 003
+      author: lucas
+      changes:
+        - sqlFile:
+            path: 003-create-notification-types-table.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: 004
+      author: lucas
+      changes:
+        - sqlFile:
+            path: 004-create-subscription-table.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: 005
+      author: lucas
+      changes:
+        - sqlFile:
+            path: 005-create-channels-table.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: 006
+      author: lucas
+      changes:
+        - sqlFile:
+            path: 006-create-log-history-table.sql
+            relativeToChangelogFile: true
