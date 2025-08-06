@@ -25,4 +25,9 @@ public class NotificationTypeDataProviderImpl implements NotificationTypeDataPro
     public List<NotificationType> findAllNotificationTypes() {
         return repository.findAll();
     }
+
+    @Override
+    public NotificationType findById(Long id) {
+        return repository.findById(id).get();
+    }
 }

@@ -9,4 +9,6 @@ public interface NotificationTypeDataProvider {
     void save(NotificationType notificationType);
 
     List<NotificationType> findAllNotificationTypes();
+
+    NotificationType findById(Long Id);
 }

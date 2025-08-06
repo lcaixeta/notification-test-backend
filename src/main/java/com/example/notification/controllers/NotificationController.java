@@ -1,12 +1,12 @@
 package com.example.notification.controllers;
 
+import com.example.notification.payload.NotificationRequest;
 import com.example.notification.services.NotificationService;
 import com.example.notification.services.dto.NotificationDTO;
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,10 +17,11 @@ public class NotificationController {
     @Autowired
     private NotificationService notificationService;
 
-    @GetMapping
+    @PostMapping
     @RequestMapping("/create")
-    public ResponseEntity<String> createNotification() {
-        return ResponseEntity.ok("create");
+    public ResponseEntity<String> createNotification(@RequestBody NotificationRequest request) throws BadRequestException {
+        notificationService.createNotification(request);
+        return ResponseEntity.ok("Notification created successfully!");
     }
 
     @GetMapping

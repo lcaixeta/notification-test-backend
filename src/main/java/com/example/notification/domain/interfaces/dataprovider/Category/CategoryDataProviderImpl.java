@@ -25,4 +25,10 @@ public class CategoryDataProviderImpl implements CategoryDataProvider {
     public List<Category> findAllCategories() {
         return repository.findAll();
     }
+
+    @Override
+    public Category findById(Long id) {
+        Category category = repository.findById(id).get();
+        return category;
+    }
 }

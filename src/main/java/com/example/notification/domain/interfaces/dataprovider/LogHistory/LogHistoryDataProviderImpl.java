@@ -22,6 +22,12 @@ public class LogHistoryDataProviderImpl implements LogHistoryDataProvider{
     }
 
     @Override
+    public void saveAll(List<LogHistory> logHistories) {
+        repository.saveAll(logHistories);
+        repository.flush();
+    }
+
+    @Override
     public List<LogHistory> findAllLogHistory() {
         return repository.findAll();
     }
